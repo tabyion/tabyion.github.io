@@ -1,0 +1,34 @@
+favicon: <path-to-favicon>
+
+nav:
+  title: Tab's blog
+  items:
+    Archives: /archives
+    Friends: /friends
+    Projects: /projects
+    About: /about
+    GitHub: https://github.com/tabyion/
+    Search: /search
+
+footer:
+  Blog:
+    Blog: /
+    Archives: /archives
+    Search: /search
+    Projects: /projects
+    About: /about
+    RSS: /atom.xml
+  Projects:
+    Hexo Blog: https://github.com/tabyion/tabyion.github.io
+  Me:
+    GitHub: https://github.com/tabyion
+
+color_scheme: [light/dark/auto]
+show_color_scheme_toggle: true
+
+toc: true
+toc_max_depth: 2
+
+scroll_reveal: true
+
+
