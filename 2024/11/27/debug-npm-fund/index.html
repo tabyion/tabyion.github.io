@@ -172,18 +172,18 @@
     <div class="divider"></div>
 
     <div class="content">
-        <h1 id="MacOS-安装-执行npm-install-出现-npm-fund-问题详述"><a href="#MacOS-安装-执行npm-install-出现-npm-fund-问题详述" class="headerlink" title="MacOS 安装 执行npm install 出现 npm fund 问题详述"></a><strong>MacOS 安装 执行npm install 出现 npm fund 问题详述</strong></h1><h2 id="by-TabYang"><a href="#by-TabYang" class="headerlink" title="by TabYang"></a><em><strong>by TabYang</strong></em></h2><h3 id="使用-npm-安装-Hexo-CLI"><a href="#使用-npm-安装-Hexo-CLI" class="headerlink" title="使用 npm 安装 Hexo CLI"></a><strong>使用 npm 安装 Hexo CLI</strong></h3><p>打开终端，使用以下命令安装 Hexo CLI：</p>
+        <h2 id="使用-npm-安装-Hexo-CLI"><a href="#使用-npm-安装-Hexo-CLI" class="headerlink" title="使用 npm 安装 Hexo CLI"></a><strong>使用 npm 安装 Hexo CLI</strong></h2><p>打开终端，使用以下命令安装 Hexo CLI：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
 <p>这个命令会将 Hexo CLI 安装为全局命令，你可以在任何目录下运行 Hexo。</p>
 <p><strong>注意：</strong></p>
 <p>​	• 在使用 sudo 执行命令时，会要求输入管理员密码。请确保你的 macOS 用户有管理员权限。</p>
 <p>​	• 如果安装过程中提示权限问题或安装失败，可以尝试清除 npm 缓存并重新安装。</p>
-<h3 id="检查安装是否成功"><a href="#检查安装是否成功" class="headerlink" title="检查安装是否成功"></a><strong>检查安装是否成功</strong></h3><p>安装完成后，检查 Hexo 是否安装成功:  <code>hexo -v</code></p>
+<h2 id="检查安装是否成功"><a href="#检查安装是否成功" class="headerlink" title="检查安装是否成功"></a><strong>检查安装是否成功</strong></h2><p>安装完成后，检查 Hexo 是否安装成功:  <code>hexo -v</code></p>
 <p>如果成功，会显示 Hexo 版本信息，类似于以下输出：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo-cli: 4.3.2</span><br><span class="line">os: darwin 24.0.0 15.0</span><br><span class="line">node: 22.11.0</span><br><span class="line">npm: 9.8.0</span><br></pre></td></tr></table></figure>
 
-<h3 id="问题-1：如果-hexo-v-提示-“command-not-found”"><a href="#问题-1：如果-hexo-v-提示-“command-not-found”" class="headerlink" title="问题 1：如果 hexo -v 提示 “command not found”"></a><strong>问题 1：如果 hexo -v 提示 “command not found”</strong></h3><p>这种情况通常是由于 npm 没有正确配置环境变量，或者 Hexo CLI 没有安装成功。</p>
+<h2 id="问题-1：如果-hexo-v-提示-“command-not-found”"><a href="#问题-1：如果-hexo-v-提示-“command-not-found”" class="headerlink" title="问题 1：如果 hexo -v 提示 “command not found”"></a><strong>问题 1：如果 hexo -v 提示 “command not found”</strong></h2><p>这种情况通常是由于 npm 没有正确配置环境变量，或者 Hexo CLI 没有安装成功。</p>
 <p><strong>解决方案：</strong></p>
 <p>​1.确保 npm 和 Node.js 已正确安装。再次运行以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
@@ -194,7 +194,7 @@
 <p>3.如果路径正确，但依然无法使用 hexo 命令，尝试通过以下命令重新安装 Hexo：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
-<h3 id="问题-2：安装过程中的报错信息"><a href="#问题-2：安装过程中的报错信息" class="headerlink" title="问题 2：安装过程中的报错信息"></a><strong>问题 2：安装过程中的报错信息</strong></h3><p>如果在安装过程中遇到类似以下的错误信息：</p>
+<h2 id="问题-2：安装过程中的报错信息"><a href="#问题-2：安装过程中的报错信息" class="headerlink" title="问题 2：安装过程中的报错信息"></a><strong>问题 2：安装过程中的报错信息</strong></h2><p>如果在安装过程中遇到类似以下的错误信息：</p>
 <p><img src="https://p.ipic.vip/begyxr.png"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">changed 53 packages <span class="keyword">in</span> 48s</span><br><span class="line">14 packages are looking <span class="keyword">for</span> funding</span><br></pre></td></tr></table></figure>
 
