@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>Swift基础语法详述 - Tab&#39;s Blog</title>
+  
+    <link rel="shortcut icon" href="/%3Cpath-to-favicon%3E">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+  
+  
+  <meta property="og:title" content="Swift基础语法详述 - Tab&#39;s Blog" />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="http://example.com/2024/12/03/Basic-details-of-Swift%20grammar/index.html" />
+  
+  <meta property="og:image" content="https://p.ipic.vip/fnzjfy.png" />
+  
+  <meta property="og:article:published_time" content="2024-12-03T15:20:00.000Z" />
+  
+  <meta property="og:article:author" content="Tab Yang" />
+  
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+    <body
+        data-color-scheme="light/dark/auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">Tab&#39;s blog</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/friends">Friends</a>
+            
+            
+            
+            <a class="nav-item" href="/projects">Projects</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/tabyion/" target="_blank" aria-label="GitHub">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-patreon nav-item-icon" href="https://x.com/istabyang" target="_blank" aria-label="Patreon">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-mastodon nav-item-icon" href="https://www.instagram.com/tab.yion/" target="_blank" aria-label="Mastodon">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-discord nav-item-icon" href="https://mirror.xyz/0x13adcFb250C8bE1337B840032da50615d039fC6f" target="_blank" aria-label="Discord">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank" aria-label="Search">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/Note/">Note</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>December</span>
+            <span>3,</span>
+            <span>2024</span>
+        </div>
+        
+
+        <h1 class="title">Swift基础语法详述</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h2 id="0-代码注释-Comments"><a href="#0-代码注释-Comments" class="headerlink" title="0. 代码注释 Comments"></a>0. 代码注释 Comments</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单行注释 - //</span></span><br><span class="line"><span class="comment">/* 多行</span></span><br><span class="line"><span class="comment">	 注释 - <span class="comment">/* ... */</span></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-常量与变量-Constant-Variable"><a href="#1-常量与变量-Constant-Variable" class="headerlink" title="1. 常量与变量 Constant &amp; Variable"></a>1. 常量与变量 Constant &amp; Variable</h2><ul>
+<li>声明常量：关键字 let</li>
+<li>声明变量：关键字 var</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> taskCount <span class="operator">=</span> <span class="number">10</span> <span class="comment">// 不可改变</span></span><br><span class="line"><span class="keyword">var</span> days <span class="operator">=</span> <span class="number">5</span></span><br><span class="line">days <span class="operator">=</span> <span class="number">8</span>					 <span class="comment">// 可改变</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-运算符-Operators"><a href="#2-运算符-Operators" class="headerlink" title="2. 运算符 Operators"></a>2. 运算符 Operators</h2><ul>
+<li>基本运算符：<code>=, +, -, *, /, %, +=, -=, *=, /=</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 赋值运算符 = 将右边的值赋给左边</span><br><span class="line">let a = 1</span><br><span class="line">let b = 2</span><br><span class="line">let c = 3</span><br><span class="line"></span><br><span class="line">var result: Int</span><br><span class="line">// +、-、*、/、%（求余）为基本数学运算符</span><br><span class="line">result = a + b</span><br><span class="line">result = a - b</span><br><span class="line">result = a * b</span><br><span class="line">result = a / b</span><br><span class="line">result = a % b</span><br><span class="line">// 涉及到小数计算，swift为向下取整</span><br><span class="line"></span><br><span class="line">// 运算并赋值：+=、-=、/=、*=、%=</span><br><span class="line">var count = 1</span><br><span class="line">count += 1 // count: 2 等价于 count = count + 1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>逻辑运算符：<code>&amp;&amp;, ||, !</code></li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &amp;&amp; 与 运算</span></span><br><span class="line"><span class="keyword">let</span> isCheap: <span class="type">Bool</span> <span class="operator">=</span> <span class="literal">false</span></span><br><span class="line"><span class="keyword">let</span> isBuzy: <span class="type">Bool</span> <span class="operator">=</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">if</span> isCheap <span class="operator">&amp;&amp;</span> isBuzy &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;便宜但人多&quot;</span>) <span class="comment">// 不会运行，A、B两条件必须同时满足</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// || 或 运算</span></span><br><span class="line"><span class="keyword">let</span> isCheap: <span class="type">Bool</span> <span class="operator">=</span> <span class="literal">false</span></span><br><span class="line"><span class="keyword">let</span> isBuzy: <span class="type">Bool</span> <span class="operator">=</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">if</span> isCheap <span class="operator">||</span> isBuzy &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;要么便宜，要么人多&quot;</span>) <span class="comment">// 运行，A、B两条件只要一个满足</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ! 非 运算</span></span><br><span class="line"><span class="keyword">if</span> <span class="operator">!</span>isCheap &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;价格便宜&quot;</span>) <span class="comment">// 运行，false 条件的反义满足 true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>比较运算符：<code>&gt;, &lt;, ==, &gt;=, &lt;=</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// &gt;, &lt; , &gt;=, &lt;= 都可以按照数学逻辑比较</span><br><span class="line">// == 只判定等等号两边元素是否相等，相等返回true，否则返回false</span><br><span class="line">&quot;Hello&quot; == &quot;Hello&quot; // 此处返回true</span><br><span class="line">// 字符串可比较是因为Swift中的String遵循Comparable协议</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-条件判断-Control-Flow"><a href="#3-条件判断-Control-Flow" class="headerlink" title="3. 条件判断 Control Flow"></a>3. 条件判断 Control Flow</h2><ul>
+<li>if 语句</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> isOpened: <span class="type">Bool</span> <span class="operator">=</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">if</span> isOpened &#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;已开门&quot;</span>) <span class="comment">// if 判断是否为真，为真则运行&#123;&#125;代码，否则不执行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>if-else 语句</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> isOpened: <span class="type">Bool</span> <span class="operator">=</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">if</span> isOpened &#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;已开门&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;还未开门&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// if-else 为真执行if&#123;&#125;代码，否则执行else&#123;&#125;代码</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>三元运算符：<code>&lt;condition&gt; ? &lt;isTure Code&gt; : &lt;isFalse Code&gt;</code></li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 三元运算符 _ ? _ : _ 可以将上述代码写成：</span></span><br><span class="line"><span class="keyword">let</span> isOpened: <span class="type">Bool</span> <span class="operator">=</span> <span class="literal">true</span></span><br><span class="line">isOpened <span class="operator">?</span> <span class="built_in">print</span>(<span class="string">&quot;已开门&quot;</span>) : <span class="built_in">print</span>(<span class="string">&quot;还未开门&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>else-if 语句：<code>if-else if-else</code></li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> favoriteNumber <span class="operator">=</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> hatedNumber <span class="operator">=</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 假设猜测数字为 2</span></span><br><span class="line"><span class="keyword">let</span> number <span class="operator">=</span> <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> number <span class="operator">==</span> favoriteNumber &#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Yes, you are right!&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> number <span class="operator">==</span> hatedNumber &#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;No, it&#x27;s my most hated number!&quot;</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Please guess again!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>switch-case 语句</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dateNumber <span class="operator">=</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">switch</span> dateNumber &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span><span class="operator">...</span><span class="number">5</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;It&#x27;s working...&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Play the piano&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="number">7</span>: </span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Have a rest!&quot;</span>)</span><br><span class="line"><span class="comment">// Swift要求 完全列举Exhaustive 必须包含全部可能</span></span><br><span class="line"><span class="comment">// 处理意外数值的默认情况 default</span></span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Error!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-类型-Types"><a href="#4-类型-Types" class="headerlink" title="4. 类型 Types"></a>4. 类型 Types</h2><p><strong>4.0 类型分类图：</strong></p>
+<p><img src="https://p.ipic.vip/i7cnol.png" alt="类型分类"></p>
+<ul>
+<li>整数型 Int</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userAge: <span class="type">Int</span> <span class="operator">=</span> <span class="number">19</span></span><br><span class="line"><span class="comment">// userAge 为Int整型</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>浮点型 Double</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> temperature: <span class="type">Double</span> <span class="operator">=</span> <span class="number">24.6</span></span><br><span class="line"><span class="comment">// temperature 为Double浮点型</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>布尔型 Bool</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isClosed: <span class="type">Bool</span> <span class="operator">=</span> <span class="literal">false</span></span><br><span class="line"><span class="comment">// isClosed 为Bool布尔型</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>字符串 String</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userName: <span class="type">String</span> <span class="operator">=</span> <span class="string">&quot;TabYang&quot;</span></span><br><span class="line"><span class="comment">// userName 为String字符串</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>字符串插值 String Interpolation</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userAge: <span class="type">Int</span> <span class="operator">=</span> <span class="number">19</span></span><br><span class="line"><span class="keyword">var</span> userName: <span class="type">String</span> <span class="operator">=</span> <span class="string">&quot;TabYang&quot;</span></span><br><span class="line"><span class="comment">// Swift可使用&quot;\(&lt;变量名&gt;)&quot;来进行插值</span></span><br><span class="line"><span class="keyword">var</span> userInfo: <span class="type">String</span> <span class="operator">=</span> <span class="string">&quot;<span class="subst">\(userName)</span> is <span class="subst">\(userAge)</span> years old.&quot;</span></span><br><span class="line"><span class="built_in">print</span>(userInfo)</span><br><span class="line"><span class="comment">// 输出 TabYang is 19 years old</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>类型推断 Type Inference</p>
+<p>Swift可以根据开发者提供的数据，自动推断其类型</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// Type Inference 类型推断</span><br><span class="line">let userAge: Int = 19	// 此时userAge类型为Int</span><br><span class="line">let userID = 1	// 此时通过类型推断userID类型为Int</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>类型转换 Type Conversion</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userAge: <span class="type">Int</span> <span class="operator">=</span> <span class="number">19</span></span><br><span class="line"><span class="keyword">var</span> userName: <span class="type">String</span> <span class="operator">=</span> <span class="string">&quot;TabYang&quot;</span></span><br><span class="line"><span class="comment">// Swift 可通过 &lt;类型名&gt;(&lt;变量名&gt;) 完成类型转化</span></span><br><span class="line"><span class="keyword">var</span> userInfo <span class="operator">=</span> userName <span class="operator">+</span> <span class="string">&quot;is &quot;</span> <span class="operator">+</span> <span class="type">String</span>(userAge) <span class="operator">+</span> <span class="string">&quot; years old.&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>类型别名 Typealias</p>
+<p>当需要修改Swift本身定义的类型名称来使名称更符合表达或使用第三方库时需要修改struct的命名时（但不建议这么做），可以使用关键字typealias定义类型别名，其语法为 <code>typealias &lt;新类型名&gt; = &lt;老类型名&gt;</code></p>
+</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Swift允许通过typealias关键字实现类型别名</span></span><br><span class="line"><span class="keyword">typealias</span> <span class="type">Age</span> <span class="operator">=</span> <span class="type">Int</span></span><br><span class="line"><span class="keyword">var</span> userOneAge: <span class="type">Int</span> <span class="operator">=</span> <span class="number">19</span></span><br><span class="line"><span class="keyword">var</span> userTwoAge: <span class="type">Age</span> <span class="operator">=</span> <span class="number">20</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typealias</span> <span class="type">UserInfo</span> <span class="operator">=</span> [<span class="type">String</span>: <span class="type">Int</span>]</span><br><span class="line"><span class="keyword">let</span> userOne: <span class="type">UserInfo</span> <span class="operator">=</span> [<span class="string">&quot;Tab&quot;</span>: <span class="number">19</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">GameCenter</span> &#123; &#125;</span><br><span class="line"><span class="keyword">typealias</span> <span class="type">MusicGame</span> <span class="operator">=</span> <span class="type">GameCenter</span></span><br><span class="line"><span class="keyword">let</span> gameVersionOne: <span class="type">MusicGame</span> <span class="operator">=</span> <span class="type">GameCenter</span>()</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-函数和闭包"><a href="#5-函数和闭包" class="headerlink" title="5. 函数和闭包"></a>5. 函数和闭包</h2><h3 id="5-0-函数的定义-Define"><a href="#5-0-函数的定义-Define" class="headerlink" title="5.0 函数的定义 Define"></a>5.0 函数的定义 Define</h3><p>函数的本质是一个 <strong>具备独立命名、明确类型、能够捕获上下文的代码块</strong>，它可以作为闭包的一种具体形式用于调用和重用。</p>
+<p>当Swift提供的基础函数不能满足开发需求时，需要开发者自定义函数来实现某个功能，其定义必须包括：函数关键字 <code>func</code>，函数名 <code>sayHello</code>，参数列表 <code>()</code>，函数实现 <code>Implementation</code></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数定义Function Define</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">sayHello</span>() &#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Hello world!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-1-函数的使用-Call"><a href="#5-1-函数的使用-Call" class="headerlink" title="5.1 函数的使用 Call"></a>5.1 函数的使用 Call</h3><p>可以通过使用函数名和参数列来调用函数 Call Function</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sayHello()</span><br><span class="line"><span class="comment">// 自动执行其函数实现，输出 Hello world</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-函数参数列-Parameter-List"><a href="#5-2-函数参数列-Parameter-List" class="headerlink" title="5.2 函数参数列 Parameter List"></a>5.2 函数参数列 Parameter List</h3><p>开发者自定义的函数可能需要访问外来数据 Parameter ，并对这个数据进行处理，此时这个数据可以作为函数的参数传入。开发者在函数定义中所有所需的参数组成参数列Parameter List，符号为<code>()</code></p>
+<p>定义参数列语法为：<code>&lt;参数名&gt;: &lt;参数类型&gt;</code></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">func</span> <span class="title function_">userInfo</span>(<span class="params">userName</span>: <span class="type">String</span>, <span class="params">userAge</span>: <span class="type">Int</span>) &#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;<span class="subst">\(userName)</span> is <span class="subst">\(userAge)</span> years old.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// String和Int为参数类型，整体为参数列Parameter</span></span><br></pre></td></tr></table></figure>
+
+<p>根据定义用户必须传入具体实参 Argument 到函数参数列中使用：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">userInfo(userName: <span class="string">&quot;TabYang&quot;</span>, userAge: <span class="number">19</span>)</span><br><span class="line"><span class="comment">// 输出 TabYang is 19 years old.</span></span><br><span class="line"><span class="comment">// &quot;TabYang&quot;和&quot;19&quot;为具体参数 Argument</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-函数标签及默认值"><a href="#5-3-函数标签及默认值" class="headerlink" title="5.3 函数标签及默认值"></a>5.3 函数标签及默认值</h3><ul>
+<li><p>参数标签 Argument Label</p>
+<p>开发者可能会为了使函数调用更符合语言习惯，Swift提供了参数标签，将参数标签写在参数名前面，函数调用传参时可以使用该标签来代替参数名。</p>
+</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义参数标签</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">creatorInfo</span>(<span class="params">by</span> <span class="params">creatorName</span>: <span class="type">String</span>) &#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;This product is created by <span class="subst">\(creatorName)</span>.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line">creatorInfo(by: <span class="string">&quot;TabYang&quot;</span>)</span><br><span class="line"><span class="comment">// 输出 This product is created by TabYang.</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>参数标签省略：用 _ 替代参数标签可以让函数调用时直接省略参数名。</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 省略参数标签</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">creatorInfo</span>(<span class="keyword">_</span> <span class="params">creatorName</span>: <span class="type">String</span>) &#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;This product is created by <span class="subst">\(creatorName)</span>.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line">creatorInfo(<span class="string">&quot;TabYang&quot;</span>)</span><br><span class="line"><span class="comment">// 输出 This product is created by TabYang.</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置参数默认值：通过设置参数默认值，调用函数时可以不传入该参数，函数会按照默认值进行操作。</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传入参数默认值</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">creatorInfo</span>(<span class="keyword">_</span> <span class="params">creatorName</span>: <span class="type">String</span> <span class="operator">=</span> <span class="string">&quot;TabYang&quot;</span>) &#123;</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;This product is created by <span class="subst">\(creatorName)</span>.&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数但不传参</span></span><br><span class="line">creatorInfo()</span><br><span class="line"><span class="comment">// 输出 This product is created by TabYang.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数并传参</span></span><br><span class="line">creatorInfo(<span class="string">&quot;John&quot;</span>)</span><br><span class="line"><span class="comment">// 输出 This product is created by John.</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-4-函数返回值"><a href="#5-4-函数返回值" class="headerlink" title="5.4 函数返回值"></a>5.4 函数返回值</h3><p>Swift中，函数是有明确类型的，由参数和返回值确定，并且函数类型可以作为其他函数的参数和返回值。</p>
+<p>传入函数的值叫参数，参数经函数中代码处理后返回的值叫返回值，参数和返回值对于不同目的的函数来说可有可无。对于不需要函数返回值的函数，返回值可为空；对于不需要参数的函数，参数列可为空。</p>
+<p>函数所返回的结果叫做函数的<strong>返回值 Return Value，</strong>返回值的类型叫做<strong>返回类型 Return Type。</strong></p>
+<p><img src="https://p.ipic.vip/bzdijd.png"></p>
+<p>在 Swift 中，函数的类型由参数类型和返回值类型共同决定。如果传入参数为 Int 类型，返回值为 Double 类型，那么该函数的类型表示为：<code>(Int) -&gt; Double</code></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义函数</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">convertToDouble</span>(<span class="keyword">_</span> <span class="params">value</span>: <span class="type">Int</span>) -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="type">Double</span>(value) <span class="operator">*</span> <span class="number">1.5</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用函数类型变量</span></span><br><span class="line"><span class="keyword">let</span> function: (<span class="type">Int</span>) -&gt; <span class="type">Double</span> <span class="operator">=</span> convertToDouble</span><br><span class="line"><span class="keyword">let</span> result <span class="operator">=</span> function(<span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(result)	<span class="comment">// 返回 15.0</span></span><br></pre></td></tr></table></figure>
+
+<p>当函数体内部只有一个返回值时，可以省略 <code>return</code> 。</p>
+<h3 id="5-5-闭包-Closure"><a href="#5-5-闭包-Closure" class="headerlink" title="5.5 闭包 Closure"></a>5.5 闭包 Closure</h3><p>闭包Closure是Swift 中的一种代码块，类似于函数，可以捕获并存储其上下文中的变量和常量（捕获值）。可以理解为没有函数名的函数（即匿名函数），是函数的抽象。可以在程序中作为值传递和调用。</p>
+<ul>
+<li>闭包的形式：<ol>
+<li>全局函数 Global Function：即普通函数，有函数名，不捕获任何值。</li>
+<li>嵌套函数：有函数名，并且可以捕获外层函数中的值。</li>
+<li>闭包表达式：匿名闭包，常作参数或作返回值。</li>
+</ol>
+</li>
+<li>闭包的语法：</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&#123; ( <span class="operator">&lt;</span>参数列表<span class="type">ParameterList</span><span class="operator">&gt;</span> ) -&gt; <span class="operator">&lt;</span>返回值类型<span class="type">Return</span> <span class="type">Type</span><span class="operator">&gt;</span> <span class="keyword">in</span></span><br><span class="line">	<span class="operator">&lt;</span>闭包主体代码<span class="type">Closure</span> <span class="type">Main</span> <span class="type">Code</span><span class="operator">&gt;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 全局函数</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">add</span>(<span class="params">a</span>: <span class="type">Int</span>, <span class="params">b</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a <span class="operator">+</span> b</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(add(<span class="number">1</span>, <span class="number">2</span>))	<span class="comment">// 输出 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 基本闭包</span></span><br><span class="line"><span class="keyword">let</span> add <span class="operator">=</span> &#123;(a: <span class="type">Int</span>, b: <span class="type">Int</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span> </span><br><span class="line">	<span class="keyword">return</span> a <span class="operator">+</span> b          </span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(add(<span class="number">1</span>, <span class="number">2</span>))	<span class="comment">// 输出 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 闭包作为参数传递给函数,闭包类型为(Int, Int) -&gt; Int)</span></span><br><span class="line"><span class="comment">// 闭包作为参数相当于向函数参数列里传入了一个方法</span></span><br><span class="line"><span class="keyword">func</span> <span class="title function_">performCalculation</span>(<span class="keyword">_</span> <span class="params">operation</span>: (<span class="type">Int</span>, <span class="type">Int</span>) -&gt; <span class="type">Int</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> result <span class="operator">=</span> operation(<span class="number">1</span>, <span class="number">2</span>)	<span class="comment">// 传入闭包</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;<span class="subst">\(result)</span>&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> addNumbers <span class="operator">=</span> &#123;(a: <span class="type">Int</span>, b: <span class="type">Int</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span> </span><br><span class="line">	<span class="keyword">return</span> a <span class="operator">+</span> b                 </span><br><span class="line">&#125;</span><br><span class="line">performCalculation(addNumbers)	<span class="comment">// 普通闭包作为参数传递</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数直接传入闭包表达式</span></span><br><span class="line">performCalculation &#123;(a: <span class="type">Int</span>, b: <span class="type">Int</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span></span><br><span class="line">	<span class="keyword">return</span> a <span class="operator">+</span> b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 闭包作为返回值</span></span><br><span class="line">fun makeMultiplier(factor: <span class="type">Int</span>) -&gt; (<span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; number <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">return</span> number <span class="operator">*</span> factor</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> multiplayByThree <span class="operator">=</span> makeMultiplier(factor: <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(multiplyByThree(<span class="number">4</span>))	<span class="comment">// 输出 12</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>闭包的类型：闭包的类型由其参数和返回类型决定</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> add: (a: <span class="type">Int</span>, b: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;(a, b) <span class="keyword">in</span></span><br><span class="line">	<span class="keyword">return</span> a <span class="operator">+</span> b</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 闭包类型为：(Int, Int) -&gt; Int</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>闭包捕获值和捕获列表</li>
+<li>闭包简化</li>
+</ul>
+<h2 id="6-Swift数据容器-Data-Container"><a href="#6-Swift数据容器-Data-Container" class="headerlink" title="6. Swift数据容器 Data Container"></a>6. Swift数据容器 Data Container</h2><h3 id="6-0-集合：数组-Array"><a href="#6-0-集合：数组-Array" class="headerlink" title="6.0 集合：数组 Array"></a>6.0 集合：数组 Array</h3><h3 id="6-1-集合：字典-Dictionary"><a href="#6-1-集合：字典-Dictionary" class="headerlink" title="6.1 集合：字典 Dictionary"></a>6.1 集合：字典 Dictionary</h3><h2 id="7-循环"><a href="#7-循环" class="headerlink" title="7. 循环"></a>7. 循环</h2><h3 id="7-0-for-in-循环"><a href="#7-0-for-in-循环" class="headerlink" title="7.0 for-in 循环"></a>7.0 for-in 循环</h3><h3 id="7-1-for-each-循环"><a href="#7-1-for-each-循环" class="headerlink" title="7.1 for-each 循环"></a>7.1 for-each 循环</h3><h3 id="7-2-while-循环"><a href="#7-2-while-循环" class="headerlink" title="7.2 while 循环"></a>7.2 while 循环</h3><h3 id="7-3-repeat-while-循环"><a href="#7-3-repeat-while-循环" class="headerlink" title="7.3 repeat-while 循环"></a>7.3 repeat-while 循环</h3><h2 id="8-可选型"><a href="#8-可选型" class="headerlink" title="8. 可选型"></a>8. 可选型</h2><h2 id="9-Swift数据结构-Data-Structure"><a href="#9-Swift数据结构-Data-Structure" class="headerlink" title="9. Swift数据结构 Data Structure"></a>9. Swift数据结构 Data Structure</h2><h3 id="9-0-结构定义"><a href="#9-0-结构定义" class="headerlink" title="9.0 结构定义"></a>9.0 结构定义</h3><h3 id="9-1值类型与引用类型"><a href="#9-1值类型与引用类型" class="headerlink" title="9.1值类型与引用类型"></a>9.1值类型与引用类型</h3><h3 id="9-2-创建实体-Instance"><a href="#9-2-创建实体-Instance" class="headerlink" title="9.2 创建实体 Instance"></a>9.2 创建实体 Instance</h3><h3 id="9-3-结构属性和方法"><a href="#9-3-结构属性和方法" class="headerlink" title="9.3 结构属性和方法"></a>9.3 结构属性和方法</h3><h3 id="9-4-初始化器"><a href="#9-4-初始化器" class="headerlink" title="9.4 初始化器"></a>9.4 初始化器</h3><h3 id="9-5-枚举型结构-Enumeration"><a href="#9-5-枚举型结构-Enumeration" class="headerlink" title="9.5 枚举型结构 Enumeration"></a>9.5 枚举型结构 Enumeration</h3><h3 id="9-6-类结构-Class"><a href="#9-6-类结构-Class" class="headerlink" title="9.6 类结构 Class"></a>9.6 类结构 Class</h3><h2 id="10-协议-Protocol"><a href="#10-协议-Protocol" class="headerlink" title="10. 协议 Protocol"></a>10. 协议 Protocol</h2><h3 id="10-0-可等性-Equatable"><a href="#10-0-可等性-Equatable" class="headerlink" title="10.0 可等性 Equatable"></a>10.0 可等性 Equatable</h3><h3 id="10-1-可比性-Comparable"><a href="#10-1-可比性-Comparable" class="headerlink" title="10.1 可比性 Comparable"></a>10.1 可比性 Comparable</h3><h3 id="10-2-可哈希性-Hashable"><a href="#10-2-可哈希性-Hashable" class="headerlink" title="10.2 可哈希性 Hashable"></a>10.2 可哈希性 Hashable</h3><h3 id="10-3-可辨识性-Identifiable"><a href="#10-3-可辨识性-Identifiable" class="headerlink" title="10.3 可辨识性 Identifiable"></a>10.3 可辨识性 Identifiable</h3><h3 id="10-4-可编码型-Codable"><a href="#10-4-可编码型-Codable" class="headerlink" title="10.4 可编码型 Codable"></a>10.4 可编码型 Codable</h3><h2 id="11-异常处理"><a href="#11-异常处理" class="headerlink" title="11. 异常处理"></a>11. 异常处理</h2>
+    </div>
+
+    
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            <p>This post is written by Tab Yang, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+        
+        <p class="tags">
+            
+            <i class="icon"></i>
+            <a href="/tags/swift/" class="tag">#swift</a><a href="/tags/ios/" class="tag">#ios</a><a href="/tags/note/" class="tag">#note</a>
+        </p>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        <a class="next"></a>
+        
+        <a href="/2024/11/27/debug-npm-fund/" class="prev">
+            <div>
+                <div class="text">
+                    <p class="label">Previous</p>
+                    <h3 class="title">MacOS安装执行npm install出现npm fund问题详述</>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+
+    
+        
+        
+    
+</article>
+
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h2 class="title">Blog</h2>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/tags" class="item">Tags</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+                <a href="/friends" class="item">Friends</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+                <a href="/resume" class="item">Resume</a>
+                
+                <a href="/about" class="item">About</a>
+                
+                <a href="/atom.xml" class="item">RSS</a>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Projects</h2>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/rsa-cli" class="item">RSA CLI</a>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item">Hexo Theme Cupertino</a>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/a-calendar" class="item">A Calendar</a>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/auto-mirroring-bucket" class="item">Auto Mirroring Bucket</a>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/tabyion/tabyion.github.io" class="item">Hexo Blog</a>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Me</h2>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/tabyion" class="item">GitHub</a>
+                
+                <a target="_blank" rel="noopener" href="https://x.com/istabyang" class="item">X</a>
+                
+                <a target="_blank" rel="noopener" href="https://www.instagram.com/tab.yion/" class="item">Instagram</a>
+                
+                <a target="_blank" rel="noopener" href="https://noc.social/@MrWillCom" class="item">Mastodon</a>
+                
+                <a target="_blank" rel="noopener" href="https://mirror.xyz/0x13adcFb250C8bE1337B840032da50615d039fC6f" class="item">Mirror</a>
+                
+                <a href="mailto:istabyang@gmail.com" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2024 Tab Yang<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
+</html>
