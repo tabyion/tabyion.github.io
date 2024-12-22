@@ -187,7 +187,80 @@
 </ol>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;script.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Lecture-1-JavaScript-Basic-Syntax"><a href="#Lecture-1-JavaScript-Basic-Syntax" class="headerlink" title="Lecture 1 JavaScript Basic Syntax"></a>Lecture 1 JavaScript Basic Syntax</h2><h3 id="1-0-Values-and-Variables"><a href="#1-0-Values-and-Variables" class="headerlink" title="1-0 Values and Variables"></a>1-0 Values and Variables</h3>
+<h2 id="Lecture-1-JavaScript-Basic-Syntax"><a href="#Lecture-1-JavaScript-Basic-Syntax" class="headerlink" title="Lecture 1 JavaScript Basic Syntax"></a>Lecture 1 JavaScript Basic Syntax</h2><h3 id="1-0-Values-and-Variables"><a href="#1-0-Values-and-Variables" class="headerlink" title="1-0 Values and Variables"></a>1-0 Values and Variables</h3><p><strong>Code commenting</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// This is a code comment.</span></span><br><span class="line"><span class="comment">// Code here can not be executed.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* This is</span></span><br><span class="line"><span class="comment">	 a multi-line</span></span><br><span class="line"><span class="comment">	 comment.</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Declaring a variable</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// let</span></span><br><span class="line"><span class="keyword">let</span> variableName = <span class="string">&quot;Name&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> userName = <span class="string">&quot;Tab&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="variable constant_">PI</span> = <span class="number">3.1415</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Output to the browser</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> variableName = <span class="string">&quot;Name&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(variableName);</span><br></pre></td></tr></table></figure>
+
+<p>The way that names variable is called <strong>camelCase Notation</strong>.</p>
+<p><img src="https://p.ipic.vip/zt2008.png"></p>
+<h3 id="1-1-Data-Types"><a href="#1-1-Data-Types" class="headerlink" title="1-1 Data Types"></a>1-1 Data Types</h3><p><img src="https://p.ipic.vip/i2g6cq.png"></p>
+<p>Every value is either an <strong>object</strong> or a <strong>primitive value</strong> in JavaScript.</p>
+<p><strong>Basic Types and Dynamic Typing in JavaScript</strong></p>
+<p><img src="https://p.ipic.vip/3datf6.png"></p>
+<p><strong>Basic Types</strong>: </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> javaScriptIsFun = <span class="literal">true</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(javaScriptIsFun);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> javaScriptIsFun);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> userAge = <span class="number">18</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(userAge);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> userAge);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> undefinedVariable;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(undefinedVariable);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> undefinedVariable);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p.ipic.vip/et3tir.png"></p>
+<p><strong>Dynamic Typing:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> javaScriptIsFun = <span class="literal">true</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(javaScriptIsFun);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> javaScriptIsFun);</span><br><span class="line"></span><br><span class="line">javaScriptIsFun = <span class="string">&quot;Yes!&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(javaScriptIsFun);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> javaScriptIsFun);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p.ipic.vip/ycjeqd.png"></p>
+<p>Type inference in JavaScript <strong>identifiers reassigned variables</strong> and <strong>automatically changes their type</strong> based on the value.</p>
+<h3 id="1-2-let-const-and-var"><a href="#1-2-let-const-and-var" class="headerlink" title="1-2 let, const and var"></a>1-2 let, const and var</h3><p><strong>Three Ways of Declaring Variables</strong></p>
+<ul>
+<li><strong>let:</strong> Declare a variable that <strong>can be mutated</strong></li>
+<li><strong>const:</strong> Declare a variable that cannot be mutated (contant variable, immutatable)<ul>
+<li>When using const, we need basically <strong>an initial value</strong>.</li>
+</ul>
+</li>
+<li><strong>var:</strong> The same as <em><strong>let</strong></em>, but it is an <strong>outdated usage</strong>.<ul>
+<li>The <em>let</em> is block scoped, and the <em>var</em> is function scoped.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userAge = <span class="number">18</span></span><br><span class="line"><span class="keyword">const</span> userBirthYear = <span class="number">2006</span></span><br><span class="line"><span class="keyword">var</span> lastUserBirthYear = <span class="number">2006</span></span><br></pre></td></tr></table></figure>
+
+<p>Without declaring variable it still worked: </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">userName = <span class="string">&quot;Tab&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(userName);</span><br></pre></td></tr></table></figure>
+
+<p>This does not create a variable in the current so-called scope, instead, JavaScript will create a porperty on the global object.</p>
+<h3 id="1-3-Basic-Operators"><a href="#1-3-Basic-Operators" class="headerlink" title="1-3 Basic Operators"></a>1-3 Basic Operators</h3><p><strong>What operator actually is ?</strong></p>
+<p>Operator basically allows us to transform values or combine multiple values.</p>
+<p><strong>Basic Operators</strong></p>
+<ul>
+<li>Mathematical operators</li>
+<li>Comparison operators</li>
+<li>Logic operators</li>
+<li>Assignment operators</li>
+<li>etc.</li>
+</ul>
+<p><strong>Mathematical operators</strong></p>
+<ul>
+<li>Number Operation</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> now = <span class="number">2024</span>;</span><br><span class="line"><span class="keyword">const</span> ageJonas = now - <span class="number">1991</span>;</span><br><span class="line"><span class="keyword">const</span> ageTab = now - <span class="number">2004</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(ageJonas * <span class="number">2</span>, ageTab / <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 ** 3 means 2^3</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span> ** <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>String Operation</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> firstName = <span class="string">&quot;Yang&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">SecondName</span> = <span class="string">&quot;Tab&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> userName = secondName + firstName;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(userName);</span><br><span class="line"><span class="comment">// output: TabYang</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Compound Operators</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x++;</span><br><span class="line">x+=;</span><br><span class="line">x--;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Comparison Operators</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span> &gt; <span class="number">2</span>); </span><br><span class="line"><span class="comment">// &gt;, &lt;, =, &gt;=, &lt;=</span></span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     
